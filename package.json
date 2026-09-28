@@ -1,0 +1,20 @@
+{
+  "name": "livespeech",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun --hot src/server/index.ts",
+    "start": "NODE_ENV=production bun src/server/index.ts",
+    "build:web": "bun build ./src/web/index.html --outdir dist/web --minify",
+    "typecheck": "tsc --noEmit",
+    "tunnel": "cloudflared tunnel --url http://localhost:3000",
+    "cert": "bun scripts/dev-cert.ts"
+  },
+  "dependencies": {
+    "@google/genai": "^2.24.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^7.0.2"
+  }
+}
